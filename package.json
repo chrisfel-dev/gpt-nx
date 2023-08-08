@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "nx affected -t build",
-    "test": "nx affected -t test"
+    
   },
   "keywords": [],
   "author": "",
