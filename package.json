@@ -1,0 +1,26 @@
+{
+  "name": "gpt-nx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "nx affected -t build",
+    "test": "nx affected -t test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nx/node": "^16.6.0",
+    "@nx/workspace": "^16.6.0",
+    "@pellegrims/nx-remotecache-s3": "^3.0.0",
+    "@types/node": "^20.4.8",
+    "install": "^0.13.0",
+    "npm": "^9.8.1",
+    "nx": "^16.6.0",
+    "nx-cloud": "latest"
+  },
+  "nx": {
+    "targets": {}
+  }
+}

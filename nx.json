@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@pellegrims/nx-remotecache-s3",
+      "options": {
+        "cacheableOperations": [
+          //"build",
+          //"test"
+        ],
+        "bucket": "nx-dev-cache"
+      }
+    }
+  },
+  "affected": {
+    "defaultBase": "main"
+  },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  }
+ 
+}
