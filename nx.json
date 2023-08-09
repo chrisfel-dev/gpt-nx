@@ -4,7 +4,9 @@
     "default": {
       "runner": "@pellegrims/nx-remotecache-s3",
       "options": {
-        "cacheableOperations": [],
+        "cacheableOperations": [
+          "build"
+        ],
         "bucket": "nx-dev-cache"
       }
     }

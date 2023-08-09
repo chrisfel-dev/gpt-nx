@@ -75,7 +75,7 @@
     },
     "docker-build": {
       "dependsOn": ["build"],
-      "command": "docker build -f apps/embeddings/Dockerfile . -t embeddings"
+      "command": "docker build --build-arg APP_NAME=embeddings -f pipeline/Dockerfile.nodejs  . -t embeddings"
     }
   },
   "tags": []

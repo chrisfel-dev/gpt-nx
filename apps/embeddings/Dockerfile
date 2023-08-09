@@ -12,7 +12,7 @@ ENV PORT=3000
 WORKDIR /app
 
 RUN addgroup --system embeddings && \
-          adduser --system -G embeddings embeddings
+    adduser --system -G embeddings embeddings
 
 COPY dist/apps/embeddings embeddings
 RUN chown -R embeddings:embeddings .

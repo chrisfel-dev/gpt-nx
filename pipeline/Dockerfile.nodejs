@@ -1,0 +1,13 @@
+
+FROM docker.io/node:lts-alpine
+WORKDIR /usr/app
+RUN npm i -g nodemon
+ARG APP_NAME=app-name-not-set
+COPY dist/apps/${APP_NAME}/package.json ./package.json
+#RUN touch .npmrc && echo "legacy-peer-deps=true" > .npmrc
+RUN npm i --production
+COPY dist/apps/${APP_NAME}/ ./
+ENV PORT 3000
+EXPOSE 3000
+CMD nodemon main.js
+

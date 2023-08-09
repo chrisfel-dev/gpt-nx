@@ -1,0 +1,24 @@
+version: '3'
+services:
+ embeddings:
+    container_name: embeddings
+    platform: linux/amd64 #for platform error on Apple M1 chips
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./pipeline/Dockerfile.nodejs
+      args:
+        - APP_NAME=embeddings
+    environment:
+      env: dev
+    ports:
+      - '3000:3000'
+    networks:
+      - gpt-nx
+    volumes:
+      - ./dist/apps/embeddings:/usr/app
+      - ./node_modules:/usr/app/node_modules
+networks:
+  gpt-nx:
+    name: gpt-nx
+    driver: bridge
