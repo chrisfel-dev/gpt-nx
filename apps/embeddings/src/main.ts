@@ -13,11 +13,11 @@ const server = Fastify({
 server.register(app);
 
 // Start listening.
-server.listen({ port, host }, (err) => {
+server.listen({ port, host }, (err,address) => {
   if (err) {
     server.log.error(err);
     process.exit(1);
   } else {
-    console.log(`[ ready ] http://${host}:${port}`);
+    console.log(`[ ready ] ${address}`);
   }
 });

@@ -1,4 +1,4 @@
-version: '3'
+version: '3.1'
 services:
  embeddings:
     container_name: embeddings
@@ -6,18 +6,19 @@ services:
     restart: unless-stopped
     build:
       context: .
-      dockerfile: ./pipeline/Dockerfile.nodejs
+      dockerfile: ./pipeline/Dockerfile.nodejs-dev
       args:
         - APP_NAME=embeddings
     environment:
       env: dev
+      HOST: '0.0.0.0'
     ports:
-      - '3000:3000'
+      - "3000:3000"
+      - "9229:9229"
     networks:
       - gpt-nx
     volumes:
-      - ./dist/apps/embeddings:/usr/app
-      - ./node_modules:/usr/app/node_modules
+      - ./dist/apps/embeddings:/usr/app/dist
 networks:
   gpt-nx:
     name: gpt-nx
