@@ -13,8 +13,10 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": "."
-    
+    "baseUrl": ".",
+    "paths": {
+      "watsonx": ["libs/watsonx/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
